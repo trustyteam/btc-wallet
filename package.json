@@ -1,0 +1,49 @@
+{
+  "name": "btc-wallet",
+  "version": "0.1.0",
+  "description": "BTC Wallet Service",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --pretty",
+    "dev": "ts-node-dev --respawn ./src/index.ts",
+    "start": "NODE_ENV=production node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/aideal-technology/ethereum-wallet.git",
+  "author": "Nazreen <nazreen@aideallab.io>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/bull": "^3.10.4",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@typegoose/typegoose": "^6.0.3",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.1",
+    "@types/lodash.random": "^3.2.6",
+    "@types/mongoose": "^5.5.20",
+    "bitcoin-core": "^3.0.0",
+    "bitcoinjs-lib": "^5.1.6",
+    "body-parser": "^1.19.0",
+    "bs58check": "^2.1.2",
+    "bull": "^3.11.0",
+    "dotenv": "^8.1.0",
+    "ethereumjs-wallet": "^0.6.3",
+    "express": "^4.17.1",
+    "iredis": "^1.2.1",
+    "lodash.random": "^3.2.0",
+    "mongoose": "^5.7.4",
+    "satoshi-bitcoin": "^1.0.4",
+    "zeromq": "^6.0.0-beta.6"
+  }
+}

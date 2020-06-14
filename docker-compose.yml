@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  node:
+    container_name: ethwallet
+    image: node:11
+    volumes:
+      - .:/usr/src/service
+      - /usr/src/service/node_modules
+    working_dir: /usr/src/service
+    command: >
+      sh -c "yarn && yarn dev"
+    ports:
+      - 4040:4040
+    networks:
+      internal_network:
+    restart: always
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    env_file: .env
+    environment:
+      MONGO_HOST: mongo
+      REDIS_HOST: redis
+  mongo:
+    image: mongo:4.0
+    volumes:
+      - data:/data/db
+    restart: always
+volumes:
+  data:
+networks:
+  internal_network:
+    external:
+      name: internal_network
